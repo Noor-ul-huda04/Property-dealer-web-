@@ -1,0 +1,840 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fdfdfd;
+  color: #333;
+  padding-top: 70px;
+  box-sizing: border-box;
+}
+
+.navbar {
+  background-color: #8b5e3c; 
+  color: white;
+  padding: 10px 25px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;  
+  z-index: 1000; 
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); 
+  flex-wrap: wrap;
+}
+
+.navbar h1 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 15%;
+  width:28%;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul li {
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: transform 0.25s ease;
+  display: block;       
+  padding: 0;         
+}
+
+.navbar ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 7px 12px;          
+  border-radius: 5px;
+  text-decoration: none;
+  color: inherit;
+  box-sizing: border-box;
+  transition: background-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a:focus {
+  background-color: white;
+  color: #8b5e3c;
+  transform: scale(1.05);
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.hero {
+  padding: 80px 20px 60px 20px;
+  text-align: center;
+  background-image: url("house.webp"); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero h2 {
+  color:white;
+  text-shadow:1px 1px 2px black;
+  font-size: 40px;
+}
+
+.hero p {
+  color:white;
+  text-shadow:1px 1px 2px black;
+  font-size:17px;
+  margin-top: 10px;
+}
+
+.hero button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: #e99a06;
+  color: white;
+  border: none;
+  font-size:15px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0px 0px 4px rgb(41, 41, 41);
+}
+
+.hero button:hover {
+  opacity: 0.9;
+  background-color:#ecb54e;
+  color:#2e2e2e;
+  transform: scale(1.02);
+}
+
+.property-list {
+  max-width: 1200px;
+  margin: 100px auto 50px auto;
+  padding: 0 1rem;
+}
+
+.property-list h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color:  #8b5e3c;
+  padding-bottom:2rem;
+}
+
+.property-list .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.property-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.property-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.property-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.property-card .content {
+  padding: 1rem;
+}
+
+.property-card .title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.property-card .location {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.75rem;
+}
+
+.property-card .price {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.property-details {
+  padding: 15px;
+  text-align: left;
+}
+
+.property-details h3 {
+  color: #8b5e3c;
+  margin: 0 0 5px;
+}
+
+.property-details .price {
+  font-weight: bold;
+  margin-top: 10px;
+  color: black;
+}
+
+.property-details button {
+  margin-top: 12px;
+  width: 100%;
+  padding: 10px;
+  background: #8b5e3c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.property-details button:hover {
+  opacity: 0.9;
+}
+
+.contact {
+  padding: 0 20px;
+  max-width: 600px;
+  margin: 100px auto 50px auto;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #8b5e3c; 
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #8b5e3c;
+  box-shadow: 0 0 5px rgba(139, 94, 60, 0.5);
+}
+
+.contact-form button {
+  background-color: #8b5e3c;
+  color: white;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-form button:hover {
+  background-color: #6e472f;
+  transform: scale(1.05);
+}
+
+.success-message {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #e6f9ed;
+  border: 1px solid #28a745;
+  color: #2d7a40;
+  border-radius: 8px;
+  font-size: 1rem;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.agents {
+  max-width: 1000px;
+  margin: 100px auto 50px auto;
+  padding: 0 1rem;
+}
+
+.agents h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  color:#8b5e3c;
+  margin-bottom: 2rem;
+}
+
+.agents .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.agent-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.agent-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+.agent-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color:#6e472f;
+}
+
+.agent-card p {
+  margin: 0.4rem 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.agent-link {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.agent-link:hover {
+  text-decoration: underline;
+}
+
+.transportation {
+  padding: 3rem 2rem;
+  text-align: center;
+  background: #f9fafb;
+  margin-top: 50px;
+}
+
+.transportation h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color:#8b5e3c;
+  font-weight: 700;
+}
+
+.service-card {
+  max-width: 600px;
+  margin: 0 auto 30px auto;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-card img {
+  width: 120px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+  color: #0f172a;
+}
+
+.service-card .role {
+  font-weight: 600;
+  color: #2563eb;
+  margin-bottom: 0.5rem;
+}
+
+.service-card .desc {
+  font-size: 0.95rem;
+  color: #475569;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.calculator {
+  background: #f1f5f9;
+  padding: 1.5rem;
+  border-radius: 0.8rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.calculator h4 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #1e293b;
+}
+
+.calculator label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  color: #334155;
+}
+
+.calculator input {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.3rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease;
+}
+
+.calculator input:focus {
+  border-color: #2563eb;
+  outline: none;
+}
+
+.calculator button {
+  width: 100%;
+  background: #8b5e3c;
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.2s ease;
+}
+
+.calculator button:hover {
+  background: #53351f;
+}
+
+.price-estimate {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #16a34a;
+  font-weight: 600;
+}
+
+.negotiate {
+  margin-top: 1.5rem;
+}
+
+.negotiate label {
+  font-weight: 500;
+  color: #334155;
+}
+
+.negotiate input {
+  margin-top: 0.4rem;
+  border: 1px solid #cbd5e1;
+}
+
+.negotiate p {
+  margin-top: 0.8rem;
+  font-size: 0.95rem;
+  color: #0f172a;
+}
+
+.service-link {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.service-link:hover {
+  text-decoration: underline;
+}
+
+.sell-house {
+  max-width: 800px;
+  margin: 100px auto 50px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.sell-house h2 {
+  font-size: 28px;
+  color: #8b5e3c;
+  margin-bottom: 10px;
+}
+
+.sell-house p {
+  font-size: 16px;
+  color: #5a3d26;
+  margin-bottom: 25px;
+}
+
+.sell-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.sell-form input,
+.sell-form textarea {
+  padding: 12px 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.sell-form input:focus,
+.sell-form textarea:focus {
+  border-color: #3498db;
+}
+
+.sell-form textarea {
+  resize: vertical;
+}
+
+.sell-form button {
+  padding: 14px;
+  background:#8b5e3c;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.sell-form button:hover {
+  background:#573a23;
+  transform: translateY(-2px);
+}
+
+.sell-form button:active {
+  transform: translateY(0);
+}
+
+.property-detail {
+  max-width: 900px;
+  margin: 100px auto 50px auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.property-detail:hover {
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
+}
+
+.property-detail .detail-image {
+  width: 40%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 25px;
+}
+
+.property-detail h2 {
+  font-size: 2rem;
+  color: #2e2a2a;
+  margin-bottom: 10px;
+}
+
+.property-detail p {
+  color: #585656;
+  font-size: 1rem;
+  margin: 8px 0;
+}
+
+.property-detail strong {
+  color: #000000;
+}
+
+.footer {
+  width: 100%;
+  background-color: #8b5e3c;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: auto;
+  gap: 15px;
+}
+
+.footer-info, .footer-social {
+  flex: 1;
+  min-width: 250px;
+  margin: 10px;
+  text-align: left;
+}
+
+.footer-info h3,
+.footer-social h3 {
+  margin-bottom: 12px;
+  font-size: 20px;
+  border-bottom: 2px solid white;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.footer-info p, .footer-info a {
+  margin: 6px 0;
+  font-size: 15px;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-info a:hover {
+  color: #ffd700; 
+  transform: scale(1.05);
+  display: inline-block;
+}
+
+.footer-social .social-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+  justify-content: center;
+}
+
+.footer-social a img {
+  width: 30px;
+  height: 30px;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+}
+
+.footer-social a img:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 8px black;
+}
+
+.footer-bottom {
+  margin-top: 25px;
+  font-size: 15px;
+  border-top: 1px solid rgba(255,255,255,0.4);
+  padding-top: 15px;
+  text-align: center;
+}
+
+
+
+@media (max-width: 1024px) {
+  .navbar h1 {
+     margin-right: 5%;
+      width: auto;
+     }
+  .navbar ul { 
+    gap: 10px;
+   }
+  .hero h2 {
+     font-size: 32px;
+     }
+  .hero p { 
+    font-size: 15px;
+   }
+  .property-list, .agents, .sell-house, .contact { 
+    margin-top: 12%;
+     padding: 0 15px; 
+  }
+  .property-list .grid, .agents .grid { 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+  }
+  .footer-content {
+     flex-direction: column; text-align: center; 
+    }
+  .footer-info, .footer-social {
+    
+    text-align: center; margin: 15px 0; 
+  }
+   .property-detail {
+    margin-top: 130px;
+    padding: 25px;
+  }
+  .property-detail .detail-image {
+    width: 60%;
+  }
+   
+}
+
+@media (max-width: 768px) {
+  .navbar { 
+    flex-direction: column;
+     align-items: flex-start; 
+     padding: 10px 20px; 
+    }
+  .navbar h1 {
+     margin-bottom: 10px; 
+     font-size: 1.3rem;
+     }
+  .navbar ul { 
+    flex-wrap: wrap; 
+    justify-content: flex-start; 
+    gap: 12px; 
+  }
+  .hero { 
+    height: 60vh;
+     padding: 40px 10px; 
+    }
+  .hero h2 { 
+    font-size: 28px;
+   }
+  .hero p { 
+    font-size: 14px;
+   }
+  .hero button {
+     padding: 10px 20px;
+      font-size: 14px; 
+    }
+  .property-card img {
+     height: 180px;
+     }
+  .property-detail .detail-image { 
+    width: 60%; 
+  }
+  .service-card {
+     padding: 1.5rem;
+     margin-top: 100px
+     }
+  .sell-form input, .sell-form textarea { 
+    font-size: 15px; 
+   }
+   .property-list,
+  .agents,
+  .sell-house,
+  .contact {
+    margin-top: 100px;
+    padding: 0 15px;
+  }
+   .property-detail {
+    margin-top: 140px;
+    padding: 20px;
+  }
+ 
+}
+
+@media (max-width: 480px) {
+  .navbar { 
+    padding: 8px 15px;
+   }
+  .navbar h1 {
+     font-size: 1.1rem;
+     }
+  .navbar ul { 
+    flex-direction: column;
+     width: 100%; 
+     gap: 6px;
+     }
+  .navbar ul li a {
+     padding: 8px 10px;
+      font-size: 14px; 
+    }
+  .hero {
+     height: 50vh; 
+     margin-top: 60px; 
+    }
+  .hero h2 {
+     font-size: 22px;
+     }
+  .hero p { 
+    font-size: 13px; 
+  }
+  .hero button { 
+    padding: 8px 16px; 
+    font-size: 13px;
+   }
+  .property-list h2, .agents h2, .contact h2, .sell-house h2 {
+     font-size: 1.5rem;
+     margin-top: 150px;
+     }
+  .property-card img { 
+    height: 150px; 
+  }
+  .property-detail { 
+    padding: 20px;
+    margin-top: 250px; 
+  }
+  .property-detail .detail-image { 
+    width: 90%; 
+    height: auto; 
+  }
+  .footer {
+     width: 100%; 
+     padding: 30px 10px; 
+    }
+  .footer-content {
+     flex-direction: column;
+      width: 100%;
+       max-width: 100%; 
+       padding: 0; 
+       gap: 15px; 
+      }
+  .footer-info, .footer-social { 
+    width: 100%;
+     margin: 10px 0; 
+     text-align: center; 
+  }
+  .footer-bottom { 
+    font-size: 14px; 
+    padding-top: 10px; 
+  }
+   .property-list,
+  .agents,
+  .sell-house,
+  .contact {
+    margin-top: 250px;
+    padding: 0 15px;
+  }
+}
+@media (max-width: 480px) and (max-height: 800px) {
+  
+  .hero {
+    margin-top: 170px;
+    
+  }
+}
